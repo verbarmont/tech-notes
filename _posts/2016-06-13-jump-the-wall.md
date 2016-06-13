@@ -21,7 +21,7 @@ hide_printmsg: false
 summaryfeed: false
 ---
 
-I have been trying to find a way to circumvent China's notorious Internet censorship, or GFW (the Great Firewall), or simply the *Wall* as it's often called. 
+I have been trying to find a way to circumvent China's Internet censorship, or GFW (the Great Firewall), or simply the *Wall* as it's often called. 
 
 Until recently I have been using a commercial VPN service called ExpressVPN that costs 12 US dollars a month. It works in most cases, but very often it takes numerous re-tries to connect to their servers, and the connection gets dropped constantly.
 
@@ -62,6 +62,33 @@ apt-get update
 apt-get install build-essential python-pip python-m2crypto python-dev
 pip install gevent shadowsocks
 ~~~~
-Now you have installed Shadowsocks.
+Now you have installed Shadowsocks. It's time to configure it and start it up.
 
+Create a configuration file as below:
+
+~~~~
+{
+    "server":"<IP address>",
+    "server_port":8388,
+    "local_address": "127.0.0.1",
+    "local_port":1080,
+    "password":"<password>",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "fast_open": false,
+    "workers": 1
+}
+~~~~
+Here comes the catch I mentioned earlier. For the IP address, you should give it the **private** IP address rather than the public one; Otherwise, the server won't be able to start.
+
+Once the configuration file is there, try to start the server manually as below:
+
+~~~~
+ssserver -c /etc/shadowsocks.json
+~~~~
+
+If it looks all right, then you can proceed to make it start automatically when the operating system starts, via `Supervisor`.
+
+## Configure `Supervisor`
+If it's not installed, install 
 
