@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "A better way to jump over the wall in China"
+excerpt: "My attempt at circumveting China's Internet censorship."
 date: "2016-06-13"
 slug: "circumvent_gfw"
 category: 
