@@ -127,10 +127,15 @@ supervisorctl tail -f shadowsocks stderr
 ~~~~
 
 # Client configurations
+
 Now that the server is up and running, it's time to see if it indeed helps with the courageous wall scaling act. You need to connect a *client* to the server to find out.
+
 ## Mac client
+
 Download it [here](https://github.com/shadowsocks/shadowsocks-iOS/releases).
 
 Fill out the server IP address, port number, password and other stuff as found in the server configuration file, and then you should be good to go. No need to install browser extensions as the Pao-pao page suggests.
+
 ## Android
+
 Search for Shadowsocks in Google Play Store and fulfil similar configurations.
