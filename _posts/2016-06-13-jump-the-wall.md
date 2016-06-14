@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A better way to jump over the wall in China"
+title: "A better way to scale the Great Firewall of China"
 excerpt: "My attempt at circumventing China's Internet censorship."
 date: "2016-06-13"
 slug: "circumvent_gfw"
@@ -21,7 +21,10 @@ hide_printmsg: false
 summaryfeed: false
 ---
 
-I have been trying to find a way to circumvent China's Internet censorship, or GFW (the Great Firewall), or simply the *Wall* as it's often called. 
+* TOC
+{:toc}
+
+I have been trying to find a way to circumvent China's Internet censorship, or GFW (the Great Firewall), or simply the *Wall* as it's often called. Chinese netizens call this practice *scaling the wall*, or *翻墙*.
 
 Until recently I have been using a commercial VPN service called ExpressVPN that costs 12 US dollars a month. It works in most cases, but very often it takes numerous re-tries to connect to their servers, and the connection gets dropped constantly.
 
@@ -87,8 +90,47 @@ Once the configuration file is there, try to start the server manually as below:
 ssserver -c /etc/shadowsocks.json
 ~~~~
 
-If it looks all right, then you can proceed to make it start automatically when the operating system starts, via `Supervisor`.
+If it looks all right, then you can proceed to make it start automatically when the operating system starts, via `supervisor`.
 
-## Configure `Supervisor`
-If it's not installed, install 
+## Configure `supervisor`
+If it's not installed, then install it.
 
+~~~~
+apt-get install supervisor
+~~~~
+Then create its configuration file at `/etc/supervisor/conf.d/shadowsocks.conf`:
+
+~~~~
+[program:shadowsocks]
+command=ssserver -c /etc/shadowsocks.json
+autorestart=true
+user=nobody
+~~~~
+
+Then append the following line to the file `/etc/default/supervisor`:
+
+~~~~
+ulimit -n 51200
+~~~~
+
+Start the `supervisor` service and load its configurations:
+
+~~~~
+service supervisor start
+supervisorctl reload
+~~~~
+
+Now you can see if everything works as expected by inspecting its log:
+
+~~~~
+supervisorctl tail -f shadowsocks stderr
+~~~~
+
+# Client configurations
+Now that the server is up and running, it's time to see if it indeed helps with the courageous wall scaling act. You need to connect a *client* to the server to find out.
+## Mac client
+Download it [here](https://github.com/shadowsocks/shadowsocks-iOS/releases).
+
+Fill out the server IP address, port number, password and other stuff as found in the server configuration file, and then you should be good to go. No need to install browser extensions as the Pao-pao page suggests.
+## Android
+Search for Shadowsocks in Google Play Store and fulfil similar configurations.
