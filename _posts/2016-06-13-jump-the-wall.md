@@ -38,7 +38,7 @@ First, you need a machine, or a *VPS*, to run the Shadowsocks server. You can ge
 
  - AWS
  - The famous [Digital Ocean](https://www.digitalocean.com) or [Bandwagon Host](https://bandwagonhost.com)
- - Some other less famous (but maybe cheaper) providers such as [HostUs](https://hostus.us)
+ - Some other less famous (but maybe cheaper) providers such as [HostUs](https://hostus.us) and [Vultr](https://www.vultr.com).
 
 The idea is to get a host that is geographically close (to China), and cheap, of course.
 
