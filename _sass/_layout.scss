@@ -360,7 +360,7 @@ span + .entry-title {
 	.title {
 		display: block;
 		float: none;
-		font-weight: bold
+		font-weight: bold;
 		@include font-size(18);
 		@include media($medium) {
 			width: 70%;

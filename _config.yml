@@ -1,11 +1,11 @@
 # Site wide configuration
 
-title: Waratah Root
+title: My Technology Journal
 locale: en_US
-description: Yet another site of random thoughts
+description: Miscellaneous notes on technologies
 logo: site-logo.png
 search: true
-url: http://waratahroot.github.io
+url: https://verbarmont.github.io/tech-notes
 
 # Jekyll configuration
 
@@ -31,6 +31,6 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 
 # Site owner
 owner:
-  name: Waratah Root
+  name: Verbarmont Evanescent
   avatar: bio-photo.jpg
-  email: you@email.com
+  email: verbarmont@gmail.com
