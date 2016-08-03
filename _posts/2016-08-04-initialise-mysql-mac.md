@@ -22,7 +22,6 @@ summaryfeed: false
 ---
 1. Extract the [tar ball](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.14-osx10.11-x86_64.tar).
 1. Initialise the data directory:
-
 ~~~~~~~~~
 bin/mysqld --initialize --user=<your non-root username> --basedir=<where the binaries have been put to> --datadir=<the database directory>
 ~~~~~~~~~
