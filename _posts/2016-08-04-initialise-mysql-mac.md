@@ -26,17 +26,20 @@ summaryfeed: false
  ~~~~~
  bin/mysqld --initialize --user=<your non-root username> --basedir=<where the binaries have been put to> --datadir=<the database directory>
  ~~~~~
+ 
 1. Watch out for a line of text from the console output like below:
 
  ~~~~
  [Note] A temporary password is generated for root@localhost: *******
  ~~~~
+ 
  Note down the password.
 1. Start the daemon.
 
  ~~~~
  bin/mysqld_safe --user=<your non-root username> --basedir=/Users/zxu/Library/MySQL/current --datadir=<the database directory> &
  ~~~~
+ 
 1. Launch the interactive SQL shell, give it the password you captured before, and change the root password.
 
  ~~~~
@@ -60,9 +63,11 @@ owners.
  mysql> exit
  Bye
  ~~~~
+ 
 1. Shutdown the daemon.
 
  ~~~~
  bin/mysqladmin -u root -p shutdown
  ~~~~
+ 
  
