@@ -1,14 +1,10 @@
 source 'https://rubygems.org'
+require 'json'
+require 'open-uri'
 
-group :jekyll_plugins do
+versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+gem 'github-pages', versions['github-pages']
+
 gem 'jekyll'
 gem 'jekyll-sitemap'
-gem 'jemoji'
-gem 'jekyll-redirect-from'
-gem 'jekyll-paginate'
-gem 'jekyll-compose'
-end
-
-gem 'font-awesome-sass'
-gem 'kramdown'
-gem 'rouge'
+gem 'octopress', '~> 3.0.0.rc.12'
