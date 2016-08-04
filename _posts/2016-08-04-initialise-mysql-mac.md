@@ -30,6 +30,18 @@ Start the daemon.
 bin/mysqld_safe --user=<your non-root username> --basedir=/Users/zxu/Library/MySQL/current --datadir=<the database directory> &
 ```
 
+**Note**: if you hit the following error when starting the daemon on Linux:
+
+```
+error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory
+```
+
+If probably means that the library in question has not been installed. You can install it like below:
+
+```
+sudo apt-get install libaio1 libaio-dev
+```
+
 Launch the interactive SQL shell, give it the password you captured before, and change the root password.
 
 ```
