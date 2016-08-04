@@ -4,9 +4,7 @@ title: "How to initialise MySQL on Mac"
 excerpt: ""
 date: "2016-08-04"
 slug: "initialise-mysql-mac"
-category: 
-  - views
-  - featured
+categories: blog
 tags:
   - MySQL
   - Database

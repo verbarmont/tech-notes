@@ -4,9 +4,7 @@ title: "How to clean up bash command history"
 excerpt: "Steps to clean up bash command history."
 date: "2016-06-19"
 slug: "clean-up-bash-history"
-category: 
-  - views
-  - featured
+categories: blog
 tags:
   - Linux
 show_meta: true

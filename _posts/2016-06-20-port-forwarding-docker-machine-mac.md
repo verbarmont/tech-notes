@@ -4,9 +4,7 @@ title: "How to forward port for docker-machine on Mac"
 excerpt: ""
 date: "2016-06-20"
 slug: "mac-docker-machine-port-forwarding"
-category: 
-  - views
-  - featured
+categories: blog
 tags:
   - Mac
   - Docker

@@ -4,9 +4,7 @@ title: "A better way to scale the Great Firewall of China"
 excerpt: "My attempt at circumventing China's Internet censorship."
 date: "2016-06-13"
 slug: "circumvent_gfw"
-category: 
-  - views
-  - featured
+categories: blog
 tags:
   - Internet
   - China
