@@ -31,10 +31,13 @@ bin/mysqld_safe --user=<your non-root username> --basedir=/Users/zxu/Library/MyS
 ```
 
 **Note**: if you hit the following error when starting the daemon on Linux:
+
 ```
 error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory
 ```
+
 If probably means that the library in question has not been installed. You can install it like below:
+
 ```
 sudo apt-get install libaio1 libaio-dev
 ```
