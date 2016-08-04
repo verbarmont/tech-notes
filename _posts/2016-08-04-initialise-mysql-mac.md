@@ -40,7 +40,7 @@ Start the daemon.
 ```
 bin/mysqld_safe --user=<your non-root username> --basedir=/Users/zxu/Library/MySQL/current --datadir=<the database directory> &
 ```
- 
+
 Launch the interactive SQL shell, give it the password you captured before, and change the root password.
 
 ```
@@ -70,3 +70,4 @@ Shutdown the daemon.
 ```
 bin/mysqladmin -u root -p shutdown
 ```
+
