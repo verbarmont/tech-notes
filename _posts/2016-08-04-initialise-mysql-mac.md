@@ -20,26 +20,30 @@ nofollow: false
 hide_printmsg: false
 summaryfeed: false
 ---
-1. Extract the [tar ball](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.14-osx10.11-x86_64.tar).
-1. Initialise the data directory:
-    bin/mysqld --initialize --user=<your non-root username> --basedir=<where the binaries have been put to> --datadir=<the database directory>
- 
-1. Watch out for a line of text from the console output like below:
+Extract the [tar ball](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.14-osx10.11-x86_64.tar).
 
-~~~~
+Initialise the data directory.
+
+```
+bin/mysqld --initialize --user=<your non-root username> --basedir=<where the binaries have been put to> --datadir=<the database directory>
+``` 
+
+Watch out for a line of text from the console output like below:
+
+```
 [Note] A temporary password is generated for root@localhost: *******
-~~~~
- 
- Note down the password.
-1. Start the daemon.
+```
+Note down the password.
 
-~~~~
+Start the daemon.
+
+```
 bin/mysqld_safe --user=<your non-root username> --basedir=/Users/zxu/Library/MySQL/current --datadir=<the database directory> &
-~~~~
+```
  
-1. Launch the interactive SQL shell, give it the password you captured before, and change the root password.
+Launch the interactive SQL shell, give it the password you captured before, and change the root password.
 
-~~~~
+```
 $ bin/mysql -u root -p
 Enter password: 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -59,12 +63,10 @@ Query OK, 0 rows affected, 1 warning (0.01 sec)
 
 mysql> exit
 Bye
-~~~~
+```
  
-1. Shutdown the daemon.
+Shutdown the daemon.
 
-~~~~
+```
 bin/mysqladmin -u root -p shutdown
-~~~~
- 
- 
+```

@@ -21,9 +21,6 @@ hide_printmsg: false
 summaryfeed: false
 ---
 
-* TOC
-{:toc}
-
 I have been trying to find a way to circumvent China's Internet censorship, or GFW (the Great Firewall), or simply the *Wall* as it's often called. Chinese netizens call this practice *scaling the wall*, or *翻墙*.
 
 Until recently I have been using a commercial VPN service called ExpressVPN that costs 12 US dollars a month. It works in most cases, but very often it takes numerous re-tries to connect to their servers, and the connection gets dropped constantly.
