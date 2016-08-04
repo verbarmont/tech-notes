@@ -8,15 +8,6 @@ categories: blog
 tags:
   - Internet
   - China
-show_meta: true
-comments: true
-mathjax: true
-gistembed: true
-published: true
-noindex: false
-nofollow: false
-hide_printmsg: false
-summaryfeed: false
 ---
 
 I have been trying to find a way to circumvent China's Internet censorship, or GFW (the Great Firewall), or simply the *Wall* as it's often called. Chinese netizens call this practice *scaling the wall*, or *翻墙*.

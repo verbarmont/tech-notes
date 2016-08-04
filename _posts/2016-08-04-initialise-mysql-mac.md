@@ -8,15 +8,6 @@ categories: blog
 tags:
   - MySQL
   - Database
-show_meta: true
-comments: true
-mathjax: true
-gistembed: true
-published: true
-noindex: false
-nofollow: false
-hide_printmsg: false
-summaryfeed: false
 ---
 Extract the [tar ball](http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.14-osx10.11-x86_64.tar).
 

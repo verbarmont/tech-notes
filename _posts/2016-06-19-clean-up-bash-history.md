@@ -7,15 +7,6 @@ slug: "clean-up-bash-history"
 categories: blog
 tags:
   - Linux
-show_meta: true
-comments: true
-mathjax: true
-gistembed: true
-published: true
-noindex: false
-nofollow: false
-hide_printmsg: false
-summaryfeed: false
 ---
 
 ~~~~

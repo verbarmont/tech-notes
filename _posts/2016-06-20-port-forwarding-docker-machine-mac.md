@@ -8,15 +8,6 @@ categories: blog
 tags:
   - Mac
   - Docker
-show_meta: true
-comments: true
-mathjax: true
-gistembed: true
-published: true
-noindex: false
-nofollow: false
-hide_printmsg: false
-summaryfeed: false
 ---
 
 ~~~~
