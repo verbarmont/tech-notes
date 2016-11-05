@@ -13,17 +13,20 @@ I've decided to move my personal Confluence instance to AWS EC2. This is how I d
 
 # Prepare an EC2 instance
 I chose the Amazon Linux AMI and the `t2.small` type. The security group I configured allows inbound traffic on the `8090` port.
+
 # Install Docker
 ```
 sudo yum update -y
 sudo yum install -y docker
 sudo service docker start
 ```
+
 # Install PostgreSQL
 ```
 docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=<postgres_password> -d postgres:9.5
 ```
 ***Note***: Confluence has a bug with the latest PostgreSQL version which is 9.6. That's why I'm using 9.5.
+
 # Set up Confluence database
 ***Tip***: you can join the PosgreSQL Docker container like this:
 
@@ -35,6 +38,7 @@ Switch to `postgres` then create the role and the database:
 createuser -S -d -r -P -E confluence
 createdb --owner confluence --encoding utf8 <confluence_password>
 ```
+
 # Install and set up Confluence
 Download Confluence installer:
 
@@ -43,9 +47,13 @@ curl -L -O https://www.atlassian.com/software/confluence/downloads/binary/atlass
 ```
 
 Install Confluence following Atlassian documentation.
+
 # Make things start automatically
+
 ## Start Confluence automatically
+
 Confluence does provide a script to make the Confluence start-up script a UNIX daemon: `bin/install_linux_service.sh`. Just run it as root.
+
 ## Start PostgreSQL Docker container automatically
 To start the Docker container, I'm using [Supervisor](http://supervisord.org).
 
@@ -77,7 +85,7 @@ And the script to start the Docker container is like this:
 ```
 ***Note***: due to the nature of Supervisor, the Docker container has to be started in the foreground. This is achieved by the `-i` option.
 
-If you want, you can also make Confluence stop the PostgreSQL Docker container when it stops itself. This is achieved by the addition of one line in Confluence script at `/etc/init.d/confluence`:
+If you want, you can also make Confluence stop the PostgreSQL Docker container when it stops itself. This is achieved by the addition of one line in the Confluence script at `/etc/init.d/confluence`:
 
 ```
 case "$1" in
