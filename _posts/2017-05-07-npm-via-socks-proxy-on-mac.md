@@ -18,7 +18,7 @@ You go to https://dashboard.daocloud.io to register an account. Probably you als
 ### Find out the magical URL
 Log in to DaoCloud and go to https://www.daocloud.io/mirror#accelerator-doc where you will find the magics. Particularly, if you are on Mac, you will find the mirror's URL which you are supposed to add to the "Docker machine":
 
-![](images/DaoCloud.png?raw=true)
+![](../../images/DaoCloud.png?raw=true)
 
 ### Update Docker machine
 
