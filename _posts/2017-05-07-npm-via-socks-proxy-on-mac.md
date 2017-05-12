@@ -1,36 +1,52 @@
 ---
 layout: post
-title: "How to use NPM with socks proxy on Mac"
+title: "Docker pull from behind China's Great Firewall"
 excerpt: ""
-date: "2017-05-07"
-slug: "npm-socks-proxy"
+date: "2017-05-13"
+slug: "docker-in-china"
 categories: blog
 tags:
   - Network
+  - China
+  - Docker
 ---
-NPM only works with HTTP proxy but not socks ones. Hence we need to convert a socks proxy, such as Shadowsocks, to an HTTP proxy. There is a tool on Mac called [polipo](https://www.irif.fr/~jch/software/polipo) for just that.
+Pulling Docker images in China is a pain in the ass - The Great Firewall makes it excruciatingly slow. Fortunately a Chinese company called DaoCloud operates a local Docker registry mirror that can speed things up. Below are the steps to take advantage of this great, and free, service:
+
+### Register an account with DaoCloud
+You go to https://dashboard.daocloud.io to register an account. Probably you also need to verify the email address used for the account.
+
+### Find out the magical URL
+Log in to DaoCloud and go to https://www.daocloud.io/mirror#accelerator-doc where you will find the magics. Particularly, if you are on Mac, you will find the mirror's URL which you are supposed to add to the "Docker machine":
+
+![](images/DaoCloud.png?raw=true)
+
+### Update Docker machine
 
 ```
-sudo chown root /usr/local/bin/brew
-sudo brew install polipo
+$ docker-machine ssh default
+                        ##         .
+                  ## ## ##        ==
+               ## ## ## ## ##    ===
+           /"""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+           \______ o           __/
+             \    \         __/
+              \____\_______/
+ _                 _   ____     _            _
+| |__   ___   ___ | |_|___ \ __| | ___   ___| | _____ _ __
+| '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
+| |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
+|_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
+Boot2Docker version 1.11.0, build HEAD : 32ee7e9 - Wed Apr 13 20:06:49 UTC 2016
+Docker version 1.11.0, build 4dc5990
+docker@default:~$ sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=<the magical URL> |g" /var/lib/boot2docker/profile
+docker@default:~$ exit
 ```
 
-After installing it, you start it like this, assuming your socks proxy is on `localhost:8080`:
+Then restart the docker-machine:
 
 ```
-polipo socksParentProxy=localhost:1080
+$ docker-machine restart default
 ```
 
-It will then spew out something like below, saying that it now listens on 
-the port `8123` as an HTTP proxy server:
-
-```
-Established listening socket on port 8123.
-```
-
-Now you can tell NPM to use the HTTP proxy that polipo just gave you:
-
-```
-npm config set proxy http://127.0.0.1:8123
-npm config set https-proxy http://127.0.0.1:8123
-```
+Now when you pull images again, it will fly.
