@@ -13,10 +13,10 @@ tags:
 Pulling Docker images in China is a pain in the ass - The Great Firewall makes it excruciatingly slow. Fortunately a Chinese company called DaoCloud operates a local Docker registry mirror that can speed things up. Below are the steps to take advantage of this great, and free, service:
 
 ### Register an account with DaoCloud
-You go to [https://dashboard.daocloud.io]() to register an account. Probably you also need to verify the email address used for the account.
+You go to [https://dashboard.daocloud.io](https://dashboard.daocloud.io) to register an account. Probably you also need to verify the email address used for the account.
 
 ### Find out the magical URL
-Log in to DaoCloud and go to [https://www.daocloud.io/mirror#accelerator-doc]() where you will find the magics. Particularly, if you are on Mac, you will find the mirror's URL which you are supposed to add to the "Docker machine":
+Log in to DaoCloud and go to [https://www.daocloud.io/mirror#accelerator-doc](https://www.daocloud.io/mirror#accelerator-doc) where you will find the magics. Particularly, if you are on Mac, you will find the mirror's URL which you are supposed to add to the "Docker machine":
 
 ![](../../images/DaoCloud.png?raw=true)
 
