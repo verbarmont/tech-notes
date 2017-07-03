@@ -6,9 +6,8 @@ date: "2017-06-22"
 slug: "backup-wechat-audio"
 categories: blog
 tags:
-  - Network
   - China
-  - Docker
+  - Social-Media
 ---
 WeChat does not provide any means to export audio / voice messages. For many, this is a big pain because over the years, important or irreplaceable information and memories could be embedded in those voice messages. Luckily there's a way to do it by ourselves, thanks to the awesome research work many people, such as [Gabriel B. Nunes](http://kronopath.net/about) and [Karl Chen](https://github.com/kn007), have done.
 
